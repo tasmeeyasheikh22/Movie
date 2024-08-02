@@ -1,0 +1,45 @@
+{% extends 'base.html'%}
+{% load crispy_forms.tags %}
+
+{% block title %}
+    <title>Title</title>
+{% endblock %}
+
+{% block content %}
+<div>
+    <table>
+        <thead>
+           <tr>
+               <th>Id</th>
+               <th>Movie_Title</th>
+               <th>Director</th>
+               <th>Review_Content</th>
+               <th>Rating</th>
+               <th>Created_Data</th>
+               <th>Review_email</th>
+               <th>Status</th>
+               <th>Genres</th>
+           </tr>
+        </thead>
+        <tbody>
+        {% for i in mov %}
+        <tr>
+            <td>{{i.id}}</td>
+            <td>{{i.movieTitle }}</td>
+            <td>{{i.director}}</td>
+            <td>{{i.review_content}}</td>
+            <td>{{i.rating}}</td>
+            <td>{{i.created_da}}</td>
+            <td>{{i.review_email_id}}</td>
+            <td>{{i.status }}</td>
+            <td>{{i.genres}}</td>
+            <td>
+                <a href="/a1/uv/{{i.id}}"><button>UPDATE</button></a>
+                <a href="/a1/dv/{{i.id}}"><button>DELETE</button></a>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+
+{% endblock %}
