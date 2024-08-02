@@ -1,5 +1,5 @@
 {% extends 'base.html'%}
-{% load crispy_forms.tags %}
+{% load crispy_forms_tags %}
 
 {% block title %}
     <title>Title</title>
@@ -7,7 +7,7 @@
 
 {% block content %}
 <div>
-    <table>
+    <table class="table table-dark table-strip">
         <thead>
            <tr>
                <th>Id</th>
@@ -19,6 +19,7 @@
                <th>Review_email</th>
                <th>Status</th>
                <th>Genres</th>
+               <th>Action</th>
            </tr>
         </thead>
         <tbody>
@@ -34,10 +35,11 @@
             <td>{{i.status }}</td>
             <td>{{i.genres}}</td>
             <td>
-                <a href="/a1/uv/{{i.id}}"><button>UPDATE</button></a>
-                <a href="/a1/dv/{{i.id}}"><button>DELETE</button></a>
+                <a href="/a1/uv/{{i.id}}"><button class="btn btn-success">UPDATE</button></a>
+                <a href="/a1/dv/{{i.id}}"><button class="btn btn-danger">DELETE</button></a>
             </td>
         </tr>
+        {% endfor %}
         </tbody>
     </table>
 </div>
